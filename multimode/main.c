@@ -28,13 +28,6 @@
 #include "nrf_nvmc.h"
 #include "boards.h"
 
-#define BUTTON2         2
-#define BUTTON3         3
-#define BUTTON4         4
-#define BUTTON5         5
-#define BUTTON6         6
-#define BUTTON7         7
-
 #define BTN_PRESSED 0
 #define BTN_RELEASED 1
 
@@ -46,7 +39,7 @@ void gpio_init()
     nrf_gpio_range_cfg_input(0, 6, NRF_GPIO_PIN_NOPULL);
 
     // Configure BUTTON7 as an active low wakeup source 
-    NRF_GPIO->PIN_CNF[7] = (GPIO_PIN_CNF_SENSE_Low << GPIO_PIN_CNF_SENSE_Pos)
+    NRF_GPIO->PIN_CNF[BUTTON_7] = (GPIO_PIN_CNF_SENSE_Low << GPIO_PIN_CNF_SENSE_Pos)
                                | (GPIO_PIN_CNF_DRIVE_S0S1 << GPIO_PIN_CNF_DRIVE_Pos)
                                | (GPIO_PIN_CNF_PULL_Disabled << GPIO_PIN_CNF_PULL_Pos)
                                | (GPIO_PIN_CNF_INPUT_Connect << GPIO_PIN_CNF_INPUT_Pos)
@@ -77,7 +70,7 @@ int main(void)
     uint32_t flash_addr;
     gpio_init();
  
-    while(nrf_gpio_pin_read(BUTTON0) == BTN_PRESSED);
+    while(nrf_gpio_pin_read(BUTTON_0) == BTN_PRESSED);
     
     // Internal 32kHz RC
     NRF_CLOCK->LFCLKSRC = CLOCK_LFCLKSRC_SRC_Xtal;
