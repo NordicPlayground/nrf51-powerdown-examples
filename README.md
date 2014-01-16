@@ -1,14 +1,12 @@
-nrf51-watchdog-resetreas-example
-==================
+nrf51-powerdown-examples
+========================
 
-This example demonstrates the use of the watchdog, the system off power-down mode and the RESETREAS register, that can be used to determine the reset reason (i.e. whether the chip was reset from system off, from power-on, reset by the watchdog or similar. 
-
-See main.c for a detailed description of the application behavior. 
+This repository contains 4 example projects showing different power-down modes and how to wake up from them. The naming and code of the projects should be fairly straight-forward. 
 
 Requirements
 ------------
 - nRF51 SDK version 5.1.0
-- nRF51822 Development Kit version 2.1.0 or later
+- nRF51822 Development Kit
 
 The project may need modifications to work with later versions or other boards. 
 
