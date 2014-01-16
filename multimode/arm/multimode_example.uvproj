@@ -408,6 +408,11 @@
               <FileType>5</FileType>
               <FilePath>..\..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
             </File>
+            <File>
+              <FileName>nrf_nvmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\Source\nrf_nvmc\nrf_nvmc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -828,6 +833,11 @@
               <FileName>keil_arm_uv4.lnt</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_nvmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\Source\nrf_nvmc\nrf_nvmc.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1250,6 +1260,11 @@
               <FileType>5</FileType>
               <FilePath>..\..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
             </File>
+            <File>
+              <FileName>nrf_nvmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\Source\nrf_nvmc\nrf_nvmc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1670,6 +1685,11 @@
               <FileName>keil_arm_uv4.lnt</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_nvmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\Source\nrf_nvmc\nrf_nvmc.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2092,6 +2112,11 @@
               <FileType>5</FileType>
               <FilePath>..\..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
             </File>
+            <File>
+              <FileName>nrf_nvmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\Source\nrf_nvmc\nrf_nvmc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2512,6 +2537,11 @@
               <FileName>keil_arm_uv4.lnt</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_nvmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\Source\nrf_nvmc\nrf_nvmc.c</FilePath>
             </File>
           </Files>
         </Group>
