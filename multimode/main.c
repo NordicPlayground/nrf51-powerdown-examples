@@ -31,18 +31,28 @@ void gpio_init()
     // Configure the LED pins as outputs
     nrf_gpio_range_cfg_output(LED_START, LED_STOP);      
 }
+
+
 uint8_t nrf_nvmc_read_byte(uint32_t flash_address)
 {
     return (uint8_t)(*((uint32_t*)(flash_address & 0xFFFFFFFC)) >> ((flash_address & 0x03) *8));
 }
+
+
 void start_32k_and_rtc()
 {
     NRF_CLOCK->EVENTS_LFCLKSTARTED = 0;
     NRF_CLOCK->TASKS_LFCLKSTART = 1;
-    while(NRF_CLOCK->EVENTS_LFCLKSTARTED == 0);
+    while(NRF_CLOCK->EVENTS_LFCLKSTARTED == 0)
+    {
+    }
+    NRF_CLOCK->EVENTS_LFCLKSTARTED = 0;
+    
     NRF_RTC1->TASKS_CLEAR = 1;
     NRF_RTC1->TASKS_START = 1;    
 }
+
+
 /**
  * main function
  * \return 0. int return type required by ANSI/ISO standard. 
@@ -53,7 +63,9 @@ int main(void)
     uint32_t flash_addr;
     gpio_init();
  
-    while(nrf_gpio_pin_read(BUTTON_0) == BTN_PRESSED);
+    while(nrf_gpio_pin_read(BUTTON_0) == BTN_PRESSED)
+    {
+    }
     
     // Internal 32kHz RC
     NRF_CLOCK->LFCLKSRC = CLOCK_LFCLKSRC_SRC_Xtal;
@@ -69,7 +81,6 @@ int main(void)
     
     while(1)
     {     
-        
         for(flash_addr = FLASH_DATA_START; flash_addr < FLASH_DATA_END; flash_addr++)
         {
             if(nrf_nvmc_read_byte(flash_addr) == 0xFF)
@@ -84,13 +95,19 @@ int main(void)
             counter = 0;
         }    
         nrf_nvmc_write_byte(flash_addr, counter);
-        //counter = NRF_POWER->GPREGRET + 1;  
-        NRF_GPIO->OUTCLR = 0xFF << 8;
-        NRF_GPIO->OUTSET = counter << 9 | 0x100;
+        
+        // Show counter on LED_1-LED_4
+        NRF_GPIO->OUTCLR = 0xFF << LED_0;
+        NRF_GPIO->OUTSET = counter << LED_1 | 0x100;
+        
+        // Wait 2 s
         nrf_delay_us(2000000);
+        // or wait for button press 
         //while(nrf_gpio_pin_read(BUTTON7) == BTN_RELEASED);
         //while(nrf_gpio_pin_read(BUTTON7) == BTN_PRESSED);   
+        
         NRF_GPIO->OUTCLR = 0xFF << 8;    
+        
         switch(counter)
         {
             case 0:
