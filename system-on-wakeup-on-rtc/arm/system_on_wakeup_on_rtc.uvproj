@@ -355,9 +355,9 @@
             <uSurpInc>0</uSurpInc>
             <VariousControls>
               <MiscControls>--c99</MiscControls>
-              <Define>NRF51</Define>
+              <Define>NRF51 BOARD_NRF6310</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\Include</IncludePath>
+              <IncludePath>..\..\..\..\..\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -406,7 +406,7 @@
             <File>
               <FileName>keil_arm_uv4.lnt</FileName>
               <FileType>5</FileType>
-              <FilePath>..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
+              <FilePath>..\..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
             </File>
           </Files>
         </Group>
@@ -416,12 +416,12 @@
             <File>
               <FileName>startup_arm_nrf51.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\..\..\Source\templates\arm\arm_startup_nrf51.s</FilePath>
+              <FilePath>..\..\..\..\..\Source\templates\arm\arm_startup_nrf51.s</FilePath>
             </File>
             <File>
               <FileName>system_nrf51.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\Source\templates\system_nrf51.c</FilePath>
+              <FilePath>..\..\..\..\..\Source\templates\system_nrf51.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -776,9 +776,9 @@
             <uSurpInc>0</uSurpInc>
             <VariousControls>
               <MiscControls>--c99</MiscControls>
-              <Define>NRF51</Define>
+              <Define>NRF51 BOARD_NRF6310</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\Include</IncludePath>
+              <IncludePath>..\..\..\..\..\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -827,7 +827,7 @@
             <File>
               <FileName>keil_arm_uv4.lnt</FileName>
               <FileType>5</FileType>
-              <FilePath>..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
+              <FilePath>..\..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
             </File>
           </Files>
         </Group>
@@ -837,12 +837,12 @@
             <File>
               <FileName>startup_arm_nrf51.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\..\..\Source\templates\arm\arm_startup_nrf51.s</FilePath>
+              <FilePath>..\..\..\..\..\Source\templates\arm\arm_startup_nrf51.s</FilePath>
             </File>
             <File>
               <FileName>system_nrf51.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\Source\templates\system_nrf51.c</FilePath>
+              <FilePath>..\..\..\..\..\Source\templates\system_nrf51.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1197,9 +1197,9 @@
             <uSurpInc>0</uSurpInc>
             <VariousControls>
               <MiscControls>--c99</MiscControls>
-              <Define>NRF51</Define>
+              <Define>NRF51 BOARD_NRF6310</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\Include</IncludePath>
+              <IncludePath>..\..\..\..\..\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1248,7 +1248,7 @@
             <File>
               <FileName>keil_arm_uv4.lnt</FileName>
               <FileType>5</FileType>
-              <FilePath>..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
+              <FilePath>..\..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
             </File>
           </Files>
         </Group>
@@ -1258,12 +1258,12 @@
             <File>
               <FileName>startup_arm_nrf51.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\..\..\Source\templates\arm\arm_startup_nrf51.s</FilePath>
+              <FilePath>..\..\..\..\..\Source\templates\arm\arm_startup_nrf51.s</FilePath>
             </File>
             <File>
               <FileName>system_nrf51.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\Source\templates\system_nrf51.c</FilePath>
+              <FilePath>..\..\..\..\..\Source\templates\system_nrf51.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1618,9 +1618,9 @@
             <uSurpInc>0</uSurpInc>
             <VariousControls>
               <MiscControls>--c99</MiscControls>
-              <Define>NRF51</Define>
+              <Define>NRF51 BOARD_NRF6310</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\Include</IncludePath>
+              <IncludePath>..\..\..\..\..\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1669,7 +1669,7 @@
             <File>
               <FileName>keil_arm_uv4.lnt</FileName>
               <FileType>5</FileType>
-              <FilePath>..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
+              <FilePath>..\..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
             </File>
           </Files>
         </Group>
@@ -1679,12 +1679,12 @@
             <File>
               <FileName>startup_arm_nrf51.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\..\..\Source\templates\arm\arm_startup_nrf51.s</FilePath>
+              <FilePath>..\..\..\..\..\Source\templates\arm\arm_startup_nrf51.s</FilePath>
             </File>
             <File>
               <FileName>system_nrf51.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\Source\templates\system_nrf51.c</FilePath>
+              <FilePath>..\..\..\..\..\Source\templates\system_nrf51.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2039,9 +2039,9 @@
             <uSurpInc>0</uSurpInc>
             <VariousControls>
               <MiscControls>--c99</MiscControls>
-              <Define>NRF51</Define>
+              <Define>NRF51 BOARD_NRF6310</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\Include</IncludePath>
+              <IncludePath>..\..\..\..\..\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2090,7 +2090,7 @@
             <File>
               <FileName>keil_arm_uv4.lnt</FileName>
               <FileType>5</FileType>
-              <FilePath>..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
+              <FilePath>..\..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
             </File>
           </Files>
         </Group>
@@ -2100,12 +2100,12 @@
             <File>
               <FileName>startup_arm_nrf51.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\..\..\Source\templates\arm\arm_startup_nrf51.s</FilePath>
+              <FilePath>..\..\..\..\..\Source\templates\arm\arm_startup_nrf51.s</FilePath>
             </File>
             <File>
               <FileName>system_nrf51.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\Source\templates\system_nrf51.c</FilePath>
+              <FilePath>..\..\..\..\..\Source\templates\system_nrf51.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2460,9 +2460,9 @@
             <uSurpInc>0</uSurpInc>
             <VariousControls>
               <MiscControls>--c99</MiscControls>
-              <Define>NRF51</Define>
+              <Define>NRF51 BOARD_NRF6310</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\Include</IncludePath>
+              <IncludePath>..\..\..\..\..\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2511,7 +2511,7 @@
             <File>
               <FileName>keil_arm_uv4.lnt</FileName>
               <FileType>5</FileType>
-              <FilePath>..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
+              <FilePath>..\..\..\..\..\Source\keil_arm_uv4.lnt</FilePath>
             </File>
           </Files>
         </Group>
@@ -2521,12 +2521,12 @@
             <File>
               <FileName>startup_arm_nrf51.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\..\..\Source\templates\arm\arm_startup_nrf51.s</FilePath>
+              <FilePath>..\..\..\..\..\Source\templates\arm\arm_startup_nrf51.s</FilePath>
             </File>
             <File>
               <FileName>system_nrf51.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\Source\templates\system_nrf51.c</FilePath>
+              <FilePath>..\..\..\..\..\Source\templates\system_nrf51.c</FilePath>
             </File>
           </Files>
         </Group>
