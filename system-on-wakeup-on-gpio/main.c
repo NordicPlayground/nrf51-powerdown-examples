@@ -7,7 +7,6 @@
 #include <stdint.h>
 #include "nrf.h"
 #include "nrf_gpio.h"
-#include "nrf_delay.h"
 #include "boards.h"
 
 #define BTN_PRESSED 0
@@ -16,19 +15,15 @@
 int main(void)
 {
     // Configure BUTTON0 as a regular input
-    nrf_gpio_cfg_input(BUTTON0, NRF_GPIO_PIN_NOPULL);
+    nrf_gpio_cfg_input(BUTTON_0, NRF_GPIO_PIN_NOPULL);
     
     // Configure BUTTON1 with SENSE enabled (not possible using nrf_gpio.h alone)
-    NRF_GPIO->PIN_CNF[BUTTON1] = (GPIO_PIN_CNF_SENSE_Low << GPIO_PIN_CNF_SENSE_Pos)
-                               | (GPIO_PIN_CNF_DRIVE_S0S1 << GPIO_PIN_CNF_DRIVE_Pos)
-                               | (GPIO_PIN_CNF_PULL_Disabled << GPIO_PIN_CNF_PULL_Pos)
-                               | (GPIO_PIN_CNF_INPUT_Connect << GPIO_PIN_CNF_INPUT_Pos)
-                               | (GPIO_PIN_CNF_DIR_Input << GPIO_PIN_CNF_DIR_Pos);
+    nrf_gpio_cfg_sense_input(BUTTON_1, NRF_GPIO_PIN_NOPULL, NRF_GPIO_PIN_SENSE_LOW);
     
     // Configure the LED pins as outputs
     nrf_gpio_range_cfg_output(LED_START, LED_STOP);
     
-    nrf_gpio_pin_set(LED0);
+    nrf_gpio_pin_set(LED_0);
     
     // Configure the RAM retention parameters
     NRF_POWER->RAMON = POWER_RAMON_ONRAM0_RAM0On   << POWER_RAMON_ONRAM0_Pos
@@ -43,9 +38,9 @@ int main(void)
     while(1)
     {     
         // If BUTTON0 is pressed..
-        if(nrf_gpio_pin_read(BUTTON0) == BTN_PRESSED)
+        if(nrf_gpio_pin_read(BUTTON_0) == BTN_PRESSED)
         {
-            nrf_gpio_pin_clear(LED0);
+            nrf_gpio_pin_clear(LED_0);
             
             // Enter CONSTLAT mode if desired, otherwise LOWPWR mode will be used (LOWPWR is recommended for most applications)
             //NRF_POWER->TASKS_CONSTLAT = 1;
@@ -58,11 +53,11 @@ int main(void)
 
 void GPIOTE_IRQHandler(void)
 {
-    nrf_gpio_pin_set(LED0);
     // This handler will be run after wakeup from system ON (GPIO wakeup)
     if(NRF_GPIOTE->EVENTS_PORT)
     {
         NRF_GPIOTE->EVENTS_PORT = 0;
-                    
+        
+        nrf_gpio_pin_toggle(LED_0);
     }
 }
