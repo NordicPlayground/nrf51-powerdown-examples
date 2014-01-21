@@ -18,4 +18,6 @@ This application is one of several applications that has been built by the suppo
 
 However, in the hope that it still may be useful also for others than the ones we initially wrote it for, we've chosen to distribute it here on GitHub. 
 
-The application is built to be used with the official nRF51 SDK, that can be downloaded from www.nordicsemi.no, provided you have a product key for one of our kits.
+The application is built to be used with the official nRF51 SDK, that can be downloaded from https://www.nordicsemi.no, provided you have a product key for one of our kits.
+
+Please post any questions about this project on https://devzone.nordicsemi.com.
