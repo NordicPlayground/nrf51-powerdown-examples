@@ -16,6 +16,7 @@ int main(void)
 {
     // Configure BUTTON0 as a regular input
     nrf_gpio_cfg_input(BUTTON_0, NRF_GPIO_PIN_NOPULL);
+    
     // Configure BUTTON1 with SENSE enabled 
     nrf_gpio_cfg_sense_input(BUTTON_1, NRF_GPIO_PIN_NOPULL, NRF_GPIO_PIN_SENSE_LOW);
     

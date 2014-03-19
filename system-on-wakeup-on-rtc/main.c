@@ -18,7 +18,7 @@ int main(void)
     // Configure BUTTON0 as a regular input
     nrf_gpio_cfg_input(BUTTON_0, NRF_GPIO_PIN_NOPULL);
     
-    // Configure BUTTON1 with SENSE enabled (not possible using nrf_gpio.h alone)
+    // Configure BUTTON1 with SENSE enabled
     nrf_gpio_cfg_sense_input(BUTTON_1, NRF_GPIO_PIN_NOPULL, NRF_GPIO_PIN_SENSE_LOW);
     
     // Configure the LED pins as outputs
@@ -32,17 +32,13 @@ int main(void)
     // Start the 32 kHz clock, and wait for the start up to complete
     NRF_CLOCK->EVENTS_LFCLKSTARTED = 0;
     NRF_CLOCK->TASKS_LFCLKSTART = 1;
-    while(NRF_CLOCK->EVENTS_LFCLKSTARTED == 0)
-    {
-    }
-    NRF_CLOCK->EVENTS_LFCLKSTARTED = 0;
+    while(NRF_CLOCK->EVENTS_LFCLKSTARTED == 0);
     
     // Configure the RTC to run at 2 second intervals, and make sure COMPARE0 generates an interrupt (this will be the wakeup source)
     NRF_RTC1->PRESCALER = 0;
     NRF_RTC1->EVTENSET = RTC_EVTEN_COMPARE0_Msk; 
     NRF_RTC1->INTENSET = RTC_INTENSET_COMPARE0_Msk; 
     NRF_RTC1->CC[0] = 2*32768;
-    NRF_RTC1->TASKS_START = 1;
     NVIC_EnableIRQ(RTC1_IRQn);
             
     // Configure the RAM retention parameters
@@ -57,13 +53,23 @@ int main(void)
         if(nrf_gpio_pin_read(BUTTON_0) == BTN_PRESSED)
         {
             nrf_gpio_pin_clear(LED_0);
-                      
-            // Keep entering sleep mode as long as BUTTON1 is released
-            while(nrf_gpio_pin_read(BUTTON_1) == BTN_RELEASED)
+            
+            // Start the RTC timer
+            NRF_RTC1->TASKS_START = 1;
+            
+            // Keep entering system ON as long as Button 1 is not pressed
+            do
             {
-                // Enter system ON. After wakeup the chip will not reset, and the MCU will continue in on the next line of the code
-                __WFE();
-            }
+                // Enter System ON sleep mode
+                __WFE();  
+                // Make sure any pending events are cleared
+                __SEV();
+                __WFE();                
+            }while(nrf_gpio_pin_read(BUTTON_1) != BTN_PRESSED);
+            
+            // Stop and clear the RTC timer
+            NRF_RTC1->TASKS_STOP = 1;
+            NRF_RTC1->TASKS_CLEAR = 1;
             
             nrf_gpio_pin_set(LED_0);
             nrf_gpio_pin_clear(LED_1);
@@ -78,7 +84,7 @@ void RTC1_IRQHandler(void)
     {
         NRF_RTC1->EVENTS_COMPARE[0] = 0;
         
-        nrf_gpio_pin_toggle(LED_2);
+        nrf_gpio_pin_toggle(LED_1);
         
         NRF_RTC1->TASKS_CLEAR = 1;
     }

@@ -17,7 +17,7 @@ int main(void)
     // Configure BUTTON0 as a regular input
     nrf_gpio_cfg_input(BUTTON_0, NRF_GPIO_PIN_NOPULL);
     
-    // Configure BUTTON1 with SENSE enabled (not possible using nrf_gpio.h alone)
+    // Configure BUTTON1 with SENSE enabled
     nrf_gpio_cfg_sense_input(BUTTON_1, NRF_GPIO_PIN_NOPULL, NRF_GPIO_PIN_SENSE_LOW);
     
     // Configure the LED pins as outputs
@@ -45,8 +45,14 @@ int main(void)
             // Enter CONSTLAT mode if desired, otherwise LOWPWR mode will be used (LOWPWR is recommended for most applications)
             //NRF_POWER->TASKS_CONSTLAT = 1;
             
-            // Enter System ON
+            // Enter System ON sleep mode
             __WFE();
+            // Make sure any pending events are cleared
+            __SEV();
+            __WFE();
+            
+            // For more information on the WFE - SEV - WFE sequence, please refer to the following Devzone article:
+            // https://devzone.nordicsemi.com/index.php/how-do-you-put-the-nrf51822-chip-to-sleep#reply-1589
         }
     }
 }
