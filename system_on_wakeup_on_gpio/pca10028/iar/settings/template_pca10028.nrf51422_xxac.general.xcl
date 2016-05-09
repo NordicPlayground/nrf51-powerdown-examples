@@ -1,0 +1,11 @@
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\bin\armproc.dll" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\bin\armjlink2.dll" 
+
+"Z:\nRF51_SDK_zip\Nordic\nRF5_SDK_11.0.0_89a8197\examples\peripheral_custom\system_on_wakeup_on_gpio\pca10028\iar\_build\template_pca10028.out" 
+
+--plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\bin\armbat.dll" 
+
+
+
+
