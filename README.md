@@ -1,7 +1,7 @@
-nrf51-powerdown-examples
+nrf5x-powerdown-examples
 ========================
 
-This repository contains 2 example projects showing System-On and System-Off power-down modes and how to wake up from them. The naming and code of the projects should be fairly straight-forward. 
+This repository contains 2 example projects showing how to enter System-On and System-Off power-down modes and how to wake up from them. The naming and code of the projects should be fairly straight-forward. 
 
 Requirements
 ------------
