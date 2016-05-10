@@ -25,6 +25,21 @@ Operation
 
 Note: If the nRF5x-DK board becomes unresponsive, you can recover the board with   **nrfjprog --family NRF51 --recover**  or  **nrfjprog --family NRF52 --recover**
 
+Expected current consumption
+----------------------------
+The table below shows expected current consumption for nRF51 and nRF52 low power modes with different RAM retention. These numbers can be derived from the power chapter in the [nRF51822](http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.nrf51/dita/nrf51/pdflinks/51822_ps.html?cp=2_3_0) / [nRF51422](http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.nrf51/dita/nrf51/pdflinks/51422_ps.html?cp=2_4_0) / [nRF52832](http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.nrf52832.ps.v1.0/power.html?cp=1_3_0_16_9_0#unique_289196923) Product Specification.
+
+Low power mode | nRF51(uA) | nRF52(uA)
+--------- | --------- | ---------
+System Off - no RAM retention | 0.6 | 0.7
+System Off - 16kB RAM retention | 1.8 | 0.8
+System Off - 32kB RAM retention | 3.0 | 0.9
+System Off - 64kB RAM retention | - | 1.0
+System On - no RAM retention | 1.4 | 1.2
+System On - 16kB RAM retention | 2.6 | 1.3
+System On - 32kB RAM retention | 3.8 | 1.4
+System On - 64kB RAM retention | - | 1.5
+
 About this project
 ------------------
 This application is one of several applications that has been built by the support team at Nordic Semiconductor, as a demo of some particular feature or use case. It has not necessarily been thoroughly tested, so there might be unknown issues. It is hence provided as-is, without any warranty. 
